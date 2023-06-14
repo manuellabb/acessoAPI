@@ -12,9 +12,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    
+    - name: Fazendo o Clone
+      uses: actions/checkout@v3
+    
     - name: Render Deployment
-    - uses: sws2apps/render-deployment@v1.2.0
+      uses: johnbeynon/render-deploy-action@v0.0.8
       with:
-       serviceId: ${{secrets.RENDERSERVICEID}}
-       apiKey: ${{secrets.RENDERAPIKEY}} 
+        service-id: ${{ secrets.RENDERSERVICEID }} 
+        api-key: ${{ secrets.RENDERAPIKEY }} 
